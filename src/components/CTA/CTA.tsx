@@ -95,7 +95,7 @@ export default function CTA() {
               </a>
               <a
                 ref={btn2Ref}
-                href="mailto:info@jadencysocial.com"
+                href="mailto:hello@jadencysocial.com"
                 className="btn-ghost cta-btn"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
