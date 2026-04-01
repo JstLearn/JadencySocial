@@ -134,5 +134,9 @@
   "footer": {
     "tagline": "Dijital dünyada güçlü bir varlık için doğru adres.",
     "rights": "Tüm hakları saklıdır."
+  },
+  "common": {
+    "close": "Kapat",
+    "seeDetails": "Detayları Gör"
   }
 }

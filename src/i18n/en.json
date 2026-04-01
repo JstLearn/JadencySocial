@@ -134,5 +134,9 @@
   "footer": {
     "tagline": "The right address for a strong digital presence.",
     "rights": "All rights reserved."
+  },
+  "common": {
+    "close": "Close",
+    "seeDetails": "See Details"
   }
 }

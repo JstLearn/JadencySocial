@@ -91,7 +91,7 @@ export default function ServiceModal({ isOpen, onClose, serviceKey, color }: Ser
         aria-modal="true"
       >
         {/* Close button */}
-        <button className="service-modal-close" onClick={handleClose} aria-label="Kapat">
+        <button className="service-modal-close" onClick={handleClose} aria-label={t('common.close')}>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M18 6L6 18M6 6l12 12"/>
           </svg>
