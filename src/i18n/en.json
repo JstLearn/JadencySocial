@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "services": "Services",
+    "about": "About",
+    "process": "Process",
+    "contact": "Contact",
+    "cta": "Get Started"
+  },
+  "hero": {
+    "title": "Jadency Social",
+    "subtitle": "Empowering your brand in the digital world",
+    "description": "We grow your brand through social media management, content creation, and digital marketing.",
+    "cta": "Get Free Consultation",
+    "scroll": "Scroll Down"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions to strengthen your digital presence",
+    "items": {
+      "brand": {
+        "title": "Brand Identity Creation",
+        "desc": "We position your brand powerfully in the professional world with logo design, corporate identity, and brand guidelines.",
+        "bullets": [
+          "Corporate Identity Design",
+          "Logo Design & Variations",
+          "Corporate Presentation Design",
+          "Business Cards & Letterhead",
+          "Social Media Kits"
+        ]
+      },
+      "web": {
+        "title": "Digital Infrastructure & Website",
+        "desc": "We build your entire digital presence from domain, server, DNS, Cloudflare, and corporate email infrastructure to modern website design.",
+        "bullets": [
+          "Domain & DNS Management",
+          "Cloudflare Setup",
+          "Corporate Email Infrastructure",
+          "Website Design",
+          "SSL & Security Certificates"
+        ]
+      },
+      "ecommerce": {
+        "title": "E-Commerce Growth Infrastructure",
+        "desc": "We prepare your e-commerce site for growth with Google Merchant Center, Meta Business, Google Analytics 4, and GTM setup.",
+        "bullets": [
+          "Google Merchant Center",
+          "Meta Business & Instagram Shop",
+          "Google Analytics 4 Setup",
+          "Google Tag Manager Integration",
+          "Product Feed Management"
+        ]
+      },
+      "ads": {
+        "title": "Ad Strategy & Management",
+        "desc": "We manage your Meta Ads, Google Ads, and TikTok campaigns with cold, warm, and hot audience segmentation strategies.",
+        "bullets": [
+          "Meta Ads (Facebook & Instagram)",
+          "Google Ads (Search & Display)",
+          "TikTok Ads",
+          "Cold & Hot Audience Strategy",
+          "Weekly Optimization"
+        ]
+      },
+      "social": {
+        "title": "Social Media Content Production",
+        "desc": "We ensure your brand shines on social media with photo and video production, professional editing, and copywriting.",
+        "bullets": [
+          "Photo Shooting & Production",
+          "Video Shooting & Editing",
+          "Professional Copywriting",
+          "Reels & Short Video Content",
+          "Story Content"
+        ]
+      },
+      "video": {
+        "title": "Cinematic Video Editing",
+        "desc": "We tell your brand's story in a cinematic language with promotional films, drone footage, and corporate videos.",
+        "bullets": [
+          "Promotional Film Shooting",
+          "Drone Footage",
+          "Corporate Video Production",
+          "Cinematic Editing & Color Grading",
+          "Reels & Shorts Format"
+        ]
+      }
+    },
+    "packages": {
+      "startup": "Startup",
+      "corporate": "Corporate",
+      "premium": "Premium",
+      "enterprise": "Enterprise",
+      "promo video": "Promo Video",
+      "drone footage": "Drone Footage",
+      "corporate film": "Corporate Film",
+      "product video": "Product Video"
+    }
+  },
+  "stats": {
+    "title": "Jadency by Numbers",
+    "subtitle": "We target excellence in every project",
+    "clients": "Happy Clients",
+    "projects": "Completed Projects",
+    "experience": "Years Experience"
+  },
+  "process": {
+    "title": "How We Work",
+    "subtitle": "The path to success goes through clear steps",
+    "steps": {
+      "analysis": {
+        "title": "Analysis",
+        "desc": "We deeply analyze your brand, target audience, and competitors."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "desc": "We create a data-driven, customized digital marketing strategy."
+      },
+      "production": {
+        "title": "Production",
+        "desc": "We bring professional content production and campaigns to life."
+      },
+      "growth": {
+        "title": "Growth",
+        "desc": "We grow your brand with continuous optimization and reporting."
+      }
+    }
+  },
+  "cta": {
+    "title": "Let's Start Your Project",
+    "subtitle": "Ready to take your brand to the next level?",
+    "description": "Contact us now for a free consultation.",
+    "whatsapp": "Message on WhatsApp",
+    "email": "Send an Email"
+  },
+  "footer": {
+    "tagline": "The right address for a strong digital presence.",
+    "rights": "All rights reserved."
+  }
+}

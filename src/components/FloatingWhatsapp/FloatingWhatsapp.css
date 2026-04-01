@@ -1,0 +1,95 @@
+.floating-whatsapp {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.floating-whatsapp-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  pointer-events: all;
+  animation: whatsapp-heartbeat 1.5s ease-in-out infinite;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+  animation: none;
+}
+
+@keyframes whatsapp-heartbeat {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  15% {
+    transform: scale(1.15);
+    box-shadow: 0 8px 40px rgba(37, 211, 102, 0.6);
+  }
+  30% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  45% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+  }
+  60% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+}
+
+.floating-whatsapp-tooltip {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.floating-whatsapp:hover .floating-whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .floating-whatsapp-btn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-whatsapp-tooltip {
+    display: none;
+  }
+}

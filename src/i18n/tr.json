@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "services": "Hizmetler",
+    "about": "Hakkımızda",
+    "process": "Süreç",
+    "contact": "İletişim",
+    "cta": "Başlayalım"
+  },
+  "hero": {
+    "title": "Jadency Social",
+    "subtitle": "Markanızı dijital dünyada güçlendiriyoruz",
+    "description": "Sosyal medya yönetimi, içerik üretimi ve dijital pazarlama ile markanızı büyütüyoruz.",
+    "cta": "Ücretsiz Danışmanlık Al",
+    "scroll": "Aşağı Kaydır"
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "Dijital varlığınızı güçlendirmek için kapsamlı çözümler sunuyoruz",
+    "items": {
+      "brand": {
+        "title": "Marka Kimliği Oluşturma",
+        "desc": "Logo tasarımı, kurumsal kimlik ve marka kılavuzları ile markanızı profesyonel dünyada güçlü bir konuma taşıyoruz.",
+        "bullets": [
+          "Kurumsal Kimlik Tasarımı",
+          "Logo Tasarımı & Varyasyonları",
+          "Kurumsal Sunum Tasarımı",
+          "Kartvizit & Antetli Kağıt",
+          "Sosyal Medya Kitleri"
+        ]
+      },
+      "web": {
+        "title": "Dijital Altyapı ve Web Sitesi",
+        "desc": "Domain, sunucu, DNS, Cloudflare ve kurumsal e-posta altyapısından modern web sitesi tasarımına kadar tüm dijital varlığınızı kuruyoruz.",
+        "bullets": [
+          "Domain & DNS Yönetimi",
+          "Cloudflare Kurulumu",
+          "Kurumsal E-posta Altyapısı",
+          "Web Sitesi Tasarımı",
+          "SSL & Güvenlik Sertifikaları"
+        ]
+      },
+      "ecommerce": {
+        "title": "E-Ticaret Büyüme Altyapısı",
+        "desc": "Google Merchant Center, Meta Business, Google Analytics 4 ve GTM kurulumu ile e-ticaret sitenizi büyümeye hazır hale getiriyoruz.",
+        "bullets": [
+          "Google Merchant Center",
+          "Meta Business & Instagram Shop",
+          "Google Analytics 4 Kurulumu",
+          "Google Tag Manager Entegrasyonu",
+          "Ürün Feed Yönetimi"
+        ]
+      },
+      "ads": {
+        "title": "Reklam Stratejisi ve Yönetimi",
+        "desc": "Soğuk, ılık ve sıcak kitle segmentasyonuyla Meta Ads, Google Ads ve TikTok kampanyalarınızı strateji bazlı yönetiyoruz.",
+        "bullets": [
+          "Meta Ads (Facebook & Instagram)",
+          "Google Ads (Search & Display)",
+          "TikTok Reklamları",
+          "Soğuk & Sıcak Kitle Stratejisi",
+          "Haftalık Optimizasyon"
+        ]
+      },
+      "social": {
+        "title": "Sosyal Medya İçerik Üretimi",
+        "desc": "Fotoğraf ve video prodüksiyonu, profesyonel edit ve copywriting ile markanızın sosyal medyada parlak bir varlık göstermesini sağlıyoruz.",
+        "bullets": [
+          "Fotoğraf Çekimi & Prodüksiyon",
+          "Video Çekimi & Kurgu",
+          "Profesyonel Copywriting",
+          "Reels & Short Video İçerikleri",
+          "Hikaye (Story) İçerikleri"
+        ]
+      },
+      "video": {
+        "title": "Sinematik Video Editleri",
+        "desc": "Tanıtım filmleri, dron çekimleri ve kurumsal videolarla markanızın hikayesini sinematik bir dille anlatıyoruz.",
+        "bullets": [
+          "Tanıtım Filmi Çekimi",
+          "Dron Çekimleri",
+          "Kurumsal Video Prodüksiyonu",
+          "Sinematik Kurgu & Renk Düzeltme",
+          "Reels & Shorts Formatı"
+        ]
+      }
+    },
+    "packages": {
+      "startup": "Startup",
+      "corporate": "Kurumsal",
+      "premium": "Premium",
+      "enterprise": "Enterprise",
+      "promo video": "Tanıtım Filmi",
+      "drone footage": "Dron Çekimi",
+      "corporate film": "Kurumsal Film",
+      "product video": "Ürün Video"
+    }
+  },
+  "stats": {
+    "title": "Rakamlarla Jadency",
+    "subtitle": "Her projede mükemmelliği hedefliyoruz",
+    "clients": "Mutlu Müşteri",
+    "projects": "Tamamlanan Proje",
+    "experience": "Yıl Deneyim"
+  },
+  "process": {
+    "title": "Nasıl Çalışıyoruz?",
+    "subtitle": "Başarıya giden yol net adımlardan geçer",
+    "steps": {
+      "analysis": {
+        "title": "Analiz",
+        "desc": "Markanızı, hedef kitlenizi ve rakiplerinizi derinlemesine analiz ediyoruz."
+      },
+      "strategy": {
+        "title": "Strateji",
+        "desc": "Veriye dayalı, özelleştirilmiş dijital pazarlama stratejisi oluşturuyoruz."
+      },
+      "production": {
+        "title": "Üretim",
+        "desc": "Profesyonel içerik üretimi ve kampanyaları hayata geçiriyoruz."
+      },
+      "growth": {
+        "title": "Büyüme",
+        "desc": "Sürekli optimizasyon ve raporlama ile markanızı büyütüyoruz."
+      }
+    }
+  },
+  "cta": {
+    "title": "Projenizi Başlatalım",
+    "subtitle": "Markanızı bir üst seviyeye taşımaya hazır mısınız?",
+    "description": "Ücretsiz danışmanlık görüşmesi için hemen iletişime geçin.",
+    "whatsapp": "WhatsApp'tan Yazın",
+    "email": "E-posta Gönderin"
+  },
+  "footer": {
+    "tagline": "Dijital dünyada güçlü bir varlık için doğru adres.",
+    "rights": "Tüm hakları saklıdır."
+  }
+}

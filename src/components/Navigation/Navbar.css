@@ -1,0 +1,239 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background var(--transition-base), padding var(--transition-base), backdrop-filter var(--transition-base);
+  opacity: 0;
+}
+
+.navbar--scrolled {
+  padding: 12px 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  transition: var(--transition-base);
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+.navbar-logo-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.navbar-logo-text {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.navbar-logo-accent {
+  color: var(--color-primary);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar-link {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: #888888;
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+.navbar-link:hover {
+  color: var(--color-text);
+}
+
+.navbar-link:hover::after {
+  transform: scaleX(1);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navbar-lang {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  padding: 6px 12px;
+  border-radius: 50px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  font-family: var(--font-heading);
+}
+
+.navbar-lang:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.navbar-lang span.active {
+  color: var(--color-primary);
+}
+
+.navbar-lang-sep {
+  opacity: 0.3;
+}
+
+.navbar-cta {
+  font-size: 13px;
+  padding: 10px 20px;
+}
+
+/* Burger */
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.navbar-burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 1px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+  transform-origin: center;
+}
+
+.navbar-burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.mobile-menu.open {
+  pointer-events: all;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu-links {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-menu-link {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  padding: 12px 24px;
+  transition: var(--transition-fast);
+}
+
+.mobile-menu-link:hover {
+  color: var(--color-text);
+}
+
+.mobile-menu-cta {
+  margin-top: 16px;
+  font-size: 16px;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .navbar-links,
+  .navbar-cta {
+    display: none;
+  }
+
+  .navbar-burger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo-text {
+    font-size: 15px;
+  }
+}

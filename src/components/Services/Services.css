@@ -1,0 +1,395 @@
+.services {
+  background: var(--color-bg);
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), var(--color-secondary), transparent);
+  opacity: 0.4;
+}
+
+.services-header {
+  margin-bottom: 80px;
+  opacity: 0;
+  text-align: center;
+}
+
+/* Journey Layout - Vertical Snake */
+.services-journey {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0 120px;
+}
+
+/* S-Curve Path Line */
+.journey-path {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 1;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.journey-path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  preserveAspectRatio: none;
+}
+
+.journey-path-bg {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.journey-path-inner {
+  fill: none;
+  stroke: url(#pathGradient);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: calc(1000 - (var(--active-step, 0) / 5.5) * 1000);
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.journey-path-glow {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 8;
+  stroke-linecap: round;
+  filter: blur(8px);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: calc(1000 - (var(--active-step, 0) / 5.5) * 1000);
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.journey-step:nth-child(1) { --step-index: 0; }
+.journey-step:nth-child(2) { --step-index: 1; }
+.journey-step:nth-child(3) { --step-index: 2; }
+.journey-step:nth-child(4) { --step-index: 3; }
+.journey-step:nth-child(5) { --step-index: 4; }
+.journey-step:nth-child(6) { --step-index: 5; }
+
+/* S-curve offset for each step - cards sit in the "valleys" */
+.journey-step:nth-child(1) { --curve-offset: -140px; }
+.journey-step:nth-child(2) { --curve-offset: 140px; }
+.journey-step:nth-child(3) { --curve-offset: -140px; }
+.journey-step:nth-child(4) { --curve-offset: 140px; }
+.journey-step:nth-child(5) { --curve-offset: -140px; }
+.journey-step:nth-child(6) { --curve-offset: 140px; }
+
+/* Steps Container */
+.journey-steps {
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Step */
+.journey-step {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  margin: 350px 0;
+  cursor: pointer;
+}
+
+.journey-step.left {
+  flex-direction: row;
+  padding-right: calc(50% + 120px);
+  justify-content: flex-end;
+}
+
+.journey-step.right {
+  flex-direction: row-reverse;
+  padding-left: calc(50% + 120px);
+  justify-content: flex-end;
+  text-align: left;
+}
+
+/* Step Node on Path - positioned at center of S curve */
+.step-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.step-node {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.journey-step.active .step-node {
+  background: var(--step-color, #FFFFFF);
+  border-color: var(--step-color, #FFFFFF);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--step-color, #FFFFFF) 60%, transparent), 0 0 60px color-mix(in srgb, var(--step-color, #FFFFFF) 30%, transparent);
+}
+
+.step-num {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  transition: color 0.3s ease;
+}
+
+.journey-step.active .step-num {
+  color: #000000;
+}
+
+/* Step Card */
+.step-card {
+  display: flex;
+  gap: 20px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+  max-width: 420px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.journey-step:hover .step-card {
+  transform: scale(1.05) perspective(800px) rotateX(2deg) rotateY(-2deg);
+  border-color: var(--step-color, #FFFFFF);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--step-color, #FFFFFF);
+}
+
+.journey-step.active .step-card {
+  border-color: color-mix(in srgb, var(--step-color, #FFFFFF) 50%, transparent);
+  transform: scale(1.05);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--step-color, #FFFFFF);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.journey-step.active:hover .step-card {
+  transform: scale(1.08);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--step-color, #FFFFFF), 0 0 40px color-mix(in srgb, var(--step-color, #FFFFFF) 30%, transparent);
+}
+
+.journey-step.centered .step-card {
+  border-color: var(--step-color, #FFFFFF);
+  transform: scale(1.20) perspective(800px) rotateX(5deg) rotateY(-8deg) translateZ(30px);
+  box-shadow: 0 50px 120px rgba(0, 0, 0, 0.6), 0 0 0 2px var(--step-color, #FFFFFF), 0 0 80px color-mix(in srgb, var(--step-color, #FFFFFF) 50%, transparent);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s ease, box-shadow 0.5s ease;
+}
+
+.journey-step.centered .step-indicator {
+  transform: translateX(-50%) translateZ(40px);
+}
+
+.journey-step.centered.left .step-card {
+  transform: scale(1.20) perspective(800px) rotateX(4deg) rotateY(-6deg) translateZ(30px) translateX(160px);
+}
+
+.journey-step.centered.right .step-card {
+  transform: scale(1.20) perspective(800px) rotateX(4deg) rotateY(6deg) translateZ(30px) translateX(-160px);
+}
+
+.journey-step.centered:hover .step-card {
+  transform: scale(1.22) perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(40px);
+  box-shadow: 0 60px 140px rgba(0, 0, 0, 0.7), 0 0 0 2px var(--step-color, #FFFFFF), 0 0 100px color-mix(in srgb, var(--step-color, #FFFFFF) 60%, transparent);
+}
+
+.journey-step.centered.left:hover .step-card {
+  transform: scale(1.22) perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(40px) translateX(120px);
+}
+
+.journey-step.centered.right:hover .step-card {
+  transform: scale(1.22) perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(40px) translateX(-120px);
+}
+
+.step-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--step-color, #FFFFFF) 12%, transparent);
+  color: var(--step-color, #FFFFFF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.journey-step.active .step-icon {
+  background: color-mix(in srgb, var(--step-color, #FFFFFF) 20%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--step-color, #FFFFFF) 30%, transparent);
+}
+
+.step-info {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.step-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+}
+
+.step-bullets li {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.step-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--step-color, #FFFFFF);
+  opacity: 0.6;
+}
+
+.step-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.step-cta:hover {
+  background: var(--step-color, #FFFFFF);
+  border-color: var(--step-color, #FFFFFF);
+  color: #000000;
+}
+
+.journey-step.active .step-cta:hover {
+  background: var(--color-text);
+  border-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .journey-path {
+    left: 24px;
+  }
+
+  .journey-step.left,
+  .journey-step.right {
+    flex-direction: column;
+    padding-left: 72px;
+    padding-right: 0;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .step-indicator {
+    left: 24px;
+    transform: translateX(-50%);
+  }
+
+  .step-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .journey-step {
+    margin: 250px 0;
+  }
+
+  .journey-step.centered.left .step-card,
+  .journey-step.centered.right .step-card {
+    transform: scale(1.15) perspective(800px) rotateX(3deg) rotateY(-3deg);
+  }
+
+  .journey-step.centered .step-indicator {
+    transform: translateX(-50%);
+  }
+
+  .journey-step.centered:hover .step-card {
+    transform: scale(1.18) perspective(800px) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-header {
+    margin-bottom: 48px;
+  }
+
+  .journey-step {
+    margin: 250px 0;
+  }
+
+  .step-card {
+    padding: 20px;
+  }
+
+  .step-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .step-title {
+    font-size: 1rem;
+  }
+
+  .step-bullets {
+    display: none;
+  }
+
+  .step-node {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-num {
+    font-size: 0.95rem;
+  }
+}
