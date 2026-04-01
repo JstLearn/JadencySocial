@@ -460,6 +460,12 @@
     border-color: var(--step-color, #FFFFFF);
   }
 
+  .journey-step.centered.left:hover .step-card,
+  .journey-step.centered.right:hover .step-card {
+    transform: scale(1.01);
+    border-color: var(--step-color, #FFFFFF);
+  }
+
   /* Show highlight only when actively clicked/tapped */
   .journey-step:active .step-card {
     transform: scale(1.02);
