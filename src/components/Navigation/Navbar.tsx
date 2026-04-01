@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className="navbar-inner">
           {/* Logo */}
           <a href="#" className="navbar-logo">
-            <img src="/logo-icon.svg" alt="" className="navbar-logo-icon" aria-hidden="true" />
+            <img src="/logo-icon.svg" alt="Jadency Social Logo" className="navbar-logo-icon" />
             <span className="navbar-logo-text">
               Jadency<span className="navbar-logo-accent"> Social</span>
             </span>

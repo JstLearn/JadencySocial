@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div className="footer-brand">
             <a href="#" className="footer-logo">
-              <img src="/logo-icon.svg" alt="" className="footer-logo-icon" aria-hidden="true" />
+              <img src="/logo-icon.svg" alt="Jadency Social Logo" className="footer-logo-icon" />
               <span className="footer-logo-text">
                 Jadency<span className="footer-logo-accent"> Social</span>
               </span>
