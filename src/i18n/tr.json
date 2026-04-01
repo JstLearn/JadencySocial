@@ -138,5 +138,20 @@
   "common": {
     "close": "Kapat",
     "seeDetails": "Detayları Gör"
+  },
+  "clientTicker": {
+    "label": "Güvenilen Markalar",
+    "clients": [
+      "Marka 1",
+      "Marka 2",
+      "Marka 3",
+      "Marka 4",
+      "Marka 5",
+      "Marka 6",
+      "Marka 7",
+      "Marka 8",
+      "Marka 9",
+      "Marka 10"
+    ]
   }
 }

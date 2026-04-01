@@ -1,29 +1,31 @@
+import { useTranslation } from 'react-i18next';
 import './ClientTicker.css';
 
 const clients = [
-  'Marka 1',
-  'Marka 2',
-  'Marka 3',
-  'Marka 4',
-  'Marka 5',
-  'Marka 6',
-  'Marka 7',
-  'Marka 8',
-  'Marka 9',
-  'Marka 10',
+  'Brand 1',
+  'Brand 2',
+  'Brand 3',
+  'Brand 4',
+  'Brand 5',
+  'Brand 6',
+  'Brand 7',
+  'Brand 8',
+  'Brand 9',
+  'Brand 10',
 ];
 
 export default function ClientTicker() {
+  const { t } = useTranslation();
   // Duplicate for seamless loop
   const allClients = [...clients, ...clients];
 
   return (
     <section className="client-ticker">
-      <p className="client-ticker-label">Güvenilen Markalar</p>
+      <p className="client-ticker-label">{t('clientTicker.label')}</p>
       <div className="client-ticker-track">
         {allClients.map((client, i) => (
           <span key={i} className="client-ticker-item">
-            {client}
+            {t(`clientTicker.clients.${i % 10}`)}
           </span>
         ))}
       </div>
