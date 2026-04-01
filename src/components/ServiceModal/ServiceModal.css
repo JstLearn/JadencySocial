@@ -281,14 +281,11 @@
   padding: 24px 40px 40px;
   border-top: 1px solid var(--color-border);
   display: flex;
-  gap: 16px;
   justify-content: center;
 }
 
-.service-modal-footer .btn-primary,
-.service-modal-footer .btn-ghost {
-  flex: 1;
-  max-width: 200px;
+.service-modal-footer .btn-primary {
+  max-width: 280px;
   justify-content: center;
 }
 
@@ -371,8 +368,12 @@
     flex-direction: column;
   }
 
-  .service-modal-footer .btn-primary,
-  .service-modal-footer .btn-ghost {
+  .service-modal-footer {
+    padding: 20px 24px 32px;
+  }
+
+  .service-modal-footer .btn-primary {
     max-width: none;
+    width: 100%;
   }
 }
