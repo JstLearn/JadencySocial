@@ -4,9 +4,11 @@
     "about": "Hakkımızda",
     "process": "Süreç",
     "contact": "İletişim",
-    "cta": "Başlayalım"
+    "cta": "Başlayalım",
+    "menu": "Menü"
   },
   "hero": {
+    "label": "Sosyal Medya Ajansı",
     "title": "Jadency Social",
     "subtitle": "Markanızı dijital dünyada güçlendiriyoruz",
     "description": "Sosyal medya yönetimi, içerik üretimi ve dijital pazarlama ile markanızı büyütüyoruz.",
@@ -138,6 +140,9 @@
   "common": {
     "close": "Kapat",
     "seeDetails": "Detayları Gör"
+  },
+  "whatsapp": {
+    "ariaLabel": "WhatsApp ile iletişim"
   },
   "clientTicker": {
     "label": "Güvenilen Markalar",

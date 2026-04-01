@@ -122,7 +122,7 @@ export default function Hero() {
         <div className="container">
           <div className="hero-inner">
             <span className="hero-label section-label">
-              Social Media Agency
+              {t('hero.label')}
             </span>
 
             <h1 className="hero-title">

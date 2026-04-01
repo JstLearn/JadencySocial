@@ -4,9 +4,11 @@
     "about": "About",
     "process": "Process",
     "contact": "Contact",
-    "cta": "Get Started"
+    "cta": "Get Started",
+    "menu": "Menu"
   },
   "hero": {
+    "label": "Social Media Agency",
     "title": "Jadency Social",
     "subtitle": "Empowering your brand in the digital world",
     "description": "We grow your brand through social media management, content creation, and digital marketing.",
@@ -138,6 +140,9 @@
   "common": {
     "close": "Close",
     "seeDetails": "See Details"
+  },
+  "whatsapp": {
+    "ariaLabel": "Contact via WhatsApp"
   },
   "clientTicker": {
     "label": "Trusted Brands",

@@ -74,7 +74,7 @@ export default function Navbar() {
             <button
               className={`navbar-burger ${menuOpen ? 'open' : ''}`}
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Menu"
+              aria-label={t('nav.menu')}
             >
               <span />
               <span />
