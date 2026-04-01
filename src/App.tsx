@@ -6,7 +6,6 @@ import FloatingWhatsapp from './components/FloatingWhatsapp/FloatingWhatsapp';
 import ScrollProgress from './components/ScrollProgress/ScrollProgress';
 import Navbar from './components/Navigation/Navbar';
 import Hero from './components/Hero/Hero';
-import ClientTicker from './components/ClientTicker/ClientTicker';
 import Services from './components/Services/Services';
 import Stats from './components/Stats/Stats';
 import Process from './components/Process/Process';
@@ -22,7 +21,6 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <ClientTicker />
         <Services />
         <Stats />
         <Process />

@@ -134,7 +134,6 @@ export default function Stats() {
 
       <div className="container">
         <div className="stats-header">
-          <span className="section-label">{t('stats.title')}</span>
           <h2 className="section-title">{t('stats.title')}</h2>
           <p className="section-subtitle">{t('stats.subtitle')}</p>
         </div>
