@@ -1,6 +1,6 @@
 .floating-whatsapp {
   position: fixed;
-  bottom: 32px;
+  bottom: 48px;
   right: 32px;
   z-index: 1000;
   display: flex;
@@ -58,38 +58,14 @@
   }
 }
 
-.floating-whatsapp-tooltip {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
-  padding: 10px 16px;
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  font-weight: 500;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-}
-
-.floating-whatsapp:hover .floating-whatsapp-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
-
 @media (max-width: 768px) {
   .floating-whatsapp {
-    bottom: 20px;
+    bottom: 32px;
     right: 20px;
   }
 
   .floating-whatsapp-btn {
     width: 52px;
     height: 52px;
-  }
-
-  .floating-whatsapp-tooltip {
-    display: none;
   }
 }
