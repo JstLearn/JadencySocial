@@ -434,13 +434,14 @@
     font-size: 0.8rem;
   }
 
-  /* Mobile: no hover effects, only active/centered */
+  /* Mobile: subtle hover tilt only */
   .journey-step:hover .step-card {
-    transform: none;
+    transform: scale(1.02) perspective(600px) rotateY(2deg);
+    border-color: var(--step-color, #FFFFFF);
   }
 
   .journey-step.active:hover .step-card {
-    transform: none;
+    transform: scale(1.03) perspective(600px) rotateY(2deg);
   }
 
   .journey-step.centered .step-card {
@@ -455,12 +456,13 @@
   }
 
   .journey-step.centered:hover .step-card {
-    transform: none;
+    transform: scale(1.03) perspective(600px) rotateY(2deg);
+    border-color: var(--step-color, #FFFFFF);
   }
 
   /* Show highlight only when actively clicked/tapped */
   .journey-step:active .step-card {
-    transform: scale(1.02);
+    transform: scale(1.04) perspective(600px) rotateY(3deg);
     border-color: var(--step-color, var(--color-primary));
   }
 }
