@@ -21,43 +21,24 @@
 }
 
 .hero-overlay-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 35vh;
-  background: linear-gradient(
-    to bottom,
-    var(--color-bg) 0%,
-    rgba(0, 0, 0, 0.7) 30%,
-    rgba(0, 0, 0, 0.3) 60%,
-    transparent 100%
-  );
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 .hero-overlay-bottom {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40vh;
-  background: linear-gradient(
-    to top,
-    var(--color-bg) 0%,
-    rgba(0, 0, 0, 0.7) 30%,
-    rgba(0, 0, 0, 0.3) 60%,
-    transparent 100%
-  );
-  z-index: 1;
-  pointer-events: none;
+  display: none;
 }
 
 .hero-overlay-radial {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 50%, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
+  background: radial-gradient(
+    ellipse 75% 65% at 50% 50%,
+    transparent 0%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.35) 55%,
+    rgba(0, 0, 0, 0.75) 75%,
+    #000000 100%
+  );
   z-index: 1;
   pointer-events: none;
 }
