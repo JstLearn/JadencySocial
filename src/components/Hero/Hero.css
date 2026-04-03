@@ -32,11 +32,14 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 75% 65% at 50% 50%,
+    ellipse 80% 70% at 35% 50%,
     transparent 0%,
-    transparent 30%,
-    rgba(0, 0, 0, 0.35) 55%,
-    rgba(0, 0, 0, 0.75) 75%,
+    transparent 25%,
+    rgba(0, 0, 0, 0.12) 38%,
+    rgba(0, 0, 0, 0.28) 50%,
+    rgba(0, 0, 0, 0.50) 63%,
+    rgba(0, 0, 0, 0.72) 76%,
+    rgba(0, 0, 0, 0.88) 88%,
     #000000 100%
   );
   z-index: 1;
