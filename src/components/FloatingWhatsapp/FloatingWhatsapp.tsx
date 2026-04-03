@@ -2,11 +2,19 @@ import { useTranslation } from 'react-i18next';
 import './FloatingWhatsapp.css';
 
 export default function FloatingWhatsapp() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
+
+  const message = encodeURIComponent(
+    isEn
+      ? 'Hello, I would like to get information about your services.'
+      : 'Merhaba, hizmetleriniz hakkında bilgi almak istiyorum.'
+  );
+
   return (
     <div className="floating-whatsapp">
       <a
-        href="https://wa.me/905310330687"
+        href={`https://wa.me/905310330687?text=${message}`}
         target="_blank"
         rel="noopener noreferrer"
         className="floating-whatsapp-btn"
