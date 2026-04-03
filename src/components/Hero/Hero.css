@@ -54,7 +54,6 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  will-change: transform;
 }
 
 .hero-inner {
