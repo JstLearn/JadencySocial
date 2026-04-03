@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './i18n/index';
 import './styles/globals.css';
 
@@ -14,6 +15,34 @@ import CTA from './components/CTA/CTA';
 import Footer from './components/Footer/Footer';
 import ServiceDetail from './pages/services/ServiceDetail';
 
+function HomePage() {
+  useEffect(() => {
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <Stats />
+        <Process />
+        <CTA />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
 export default function App() {
   return (
     <div className="app">
@@ -21,19 +50,7 @@ export default function App() {
       <Cursor />
       <FloatingWhatsapp />
       <Routes>
-        <Route path="/" element={
-          <>
-            <Navbar />
-            <main>
-              <Hero />
-              <Services />
-              <Stats />
-              <Process />
-              <CTA />
-            </main>
-            <Footer />
-          </>
-        } />
+        <Route path="/" element={<HomePage />} />
         <Route path="/hizmetler/:serviceKey" element={
           <>
             <Navbar />

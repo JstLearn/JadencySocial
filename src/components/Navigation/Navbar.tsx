@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import gsap from 'gsap';
 import './Navbar.css';
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -29,13 +31,16 @@ export default function Navbar() {
     i18n.changeLanguage(i18n.language === 'tr' ? 'en' : 'tr');
   };
 
-  const closeMenu = () => setMenuOpen(false);
+  const scrollToSection = (id: string) => {
+    navigate(`/#${id}`);
+    setMenuOpen(false);
+  };
 
   const navLinks = [
-    { href: '#services', label: t('nav.services') },
-    { href: '#stats', label: t('nav.about') },
-    { href: '#process', label: t('nav.process') },
-    { href: '#contact', label: t('nav.contact') },
+    { id: 'services', label: t('nav.services') },
+    { id: 'stats', label: t('nav.about') },
+    { id: 'process', label: t('nav.process') },
+    { id: 'contact', label: t('nav.contact') },
   ];
 
   return (
@@ -43,7 +48,7 @@ export default function Navbar() {
       <nav ref={navRef} className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
         <div className="navbar-inner">
           {/* Logo */}
-          <a href="#" className="navbar-logo">
+          <a href="/" className="navbar-logo">
             <img src="/logo-icon.svg" alt="Jadency Social Logo" className="navbar-logo-icon" />
             <span className="navbar-logo-text">
               Jadency<span className="navbar-logo-accent"> Social</span>
@@ -53,10 +58,10 @@ export default function Navbar() {
           {/* Desktop Links */}
           <ul className="navbar-links">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="navbar-link">
+              <li key={link.id}>
+                <button className="navbar-link" onClick={() => scrollToSection(link.id)}>
                   {link.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -68,9 +73,9 @@ export default function Navbar() {
               <span className="navbar-lang-sep">/</span>
               <span className={i18n.language === 'en' ? 'active' : ''}>EN</span>
             </button>
-            <a href="#contact" className="btn-primary navbar-cta">
+            <button className="btn-primary navbar-cta" onClick={() => scrollToSection('contact')}>
               {t('nav.cta')}
-            </a>
+            </button>
             <button
               className={`navbar-burger ${menuOpen ? 'open' : ''}`}
               onClick={() => setMenuOpen(!menuOpen)}
@@ -88,16 +93,16 @@ export default function Navbar() {
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         <ul className="mobile-menu-links">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="mobile-menu-link" onClick={closeMenu}>
+            <li key={link.id}>
+              <button className="mobile-menu-link" onClick={() => scrollToSection(link.id)}>
                 {link.label}
-              </a>
+              </button>
             </li>
           ))}
           <li>
-            <a href="#contact" className="btn-primary mobile-menu-cta" onClick={closeMenu}>
+            <button className="btn-primary mobile-menu-cta" onClick={() => scrollToSection('contact')}>
               {t('nav.cta')}
-            </a>
+            </button>
           </li>
         </ul>
       </div>
