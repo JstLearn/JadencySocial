@@ -37,12 +37,12 @@ const serviceIcons = [
 const serviceKeys = ['brand', 'web', 'ecommerce', 'ads', 'video', 'social'] as const;
 
 const serviceColors = [
-  '#FFFFFF',
-  '#CCCCCC',
-  '#888888',
-  '#AAAAAA',
-  '#BBBBBB',
-  '#999999',
+  '#E8B86D',  // brand - altın
+  '#5BA4E6',  // web - mavi
+  '#7B68EE',  // ecommerce - mor
+  '#4ECDC4',  // ads - turkuaz
+  '#FF8C42',  // video - turuncu
+  '#FF6B9D',  // social - pembe
 ];
 
 export default function Services() {
@@ -176,6 +176,9 @@ export default function Services() {
   const selectedIndex = selectedService ? serviceKeys.indexOf(selectedService as typeof serviceKeys[number]) : 0;
   const selectedColor = serviceColors[selectedIndex] || serviceColors[0];
 
+  const currentStepIndex = Math.max(0, Math.min(serviceColors.length - 1, Math.floor(activeStep)));
+  const currentPathColor = activeStep >= 0 ? serviceColors[currentStepIndex] : serviceColors[0];
+
   return (
     <>
       <section id="services" className="section services" ref={sectionRef}>
@@ -187,16 +190,11 @@ export default function Services() {
           </div>
 
           {/* Vertical Journey */}
-          <div className="services-journey" style={{ '--active-step': activeStep } as React.CSSProperties}>
+          <div className="services-journey" style={{ '--active-step': activeStep, '--current-path-color': currentPathColor } as React.CSSProperties}>
             {/* S-Curve Path */}
             <div className="journey-path">
               <svg className="journey-path-svg" viewBox="0 0 400 350" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#FFFFFF" />
-                    <stop offset="100%" stopColor="#888888" />
-                  </linearGradient>
-                </defs>
+                <defs></defs>
                 {/* S-Curve with 200px amplitude - bulges to x=100 (left) and x=300 (right) */}
                 {/* Cards stay inside the curve valleys */}
                 <path
