@@ -21,68 +21,68 @@
     "items": {
       "brand": {
         "title": "Marka Kimliği Oluşturma",
-        "desc": "Logo tasarımı, kurumsal kimlik ve marka kılavuzları ile markanızı profesyonel dünyada güçlü bir konuma taşıyoruz.",
+        "desc": "Markanızın dijital ve fiziksel ortamlarda güçlü bir görsel kimlikle öne çıkmasını sağlıyoruz.",
         "bullets": [
-          "Kurumsal Kimlik Tasarımı",
-          "Logo Tasarımı & Varyasyonları",
-          "Kurumsal Sunum Tasarımı",
-          "Kartvizit & Antetli Kağıt",
-          "Sosyal Medya Kitleri"
+          "Profesyonel Logo Tasarımı",
+          "Kurumsal Kimlik Unsurları",
+          "Sosyal Medya Kitleri",
+          "Marka Kılavuzu",
+          "Tüm Kaynak Dosyaları"
         ]
       },
       "web": {
         "title": "Dijital Altyapı ve Web Sitesi",
-        "desc": "Domain, sunucu, DNS, Cloudflare ve kurumsal e-posta altyapısından modern web sitesi tasarımına kadar tüm dijital varlığınızı kuruyoruz.",
+        "desc": "Domain'den Cloudflare'a, kurumsal e-postadan web sitesine kadar tüm teknik altyapınızı kuruyoruz.",
         "bullets": [
           "Domain & DNS Yönetimi",
-          "Cloudflare Kurulumu",
-          "Kurumsal E-posta Altyapısı",
-          "Web Sitesi Tasarımı",
-          "SSL & Güvenlik Sertifikaları"
+          "Cloudflare Güvenlik",
+          "Kurumsal E-posta",
+          "Web Sitesi Kurulumu",
+          "SSL Sertifikası"
         ]
       },
       "ecommerce": {
         "title": "E-Ticaret Büyüme Altyapısı",
-        "desc": "Google Merchant Center, Meta Business, Google Analytics 4 ve GTM kurulumu ile e-ticaret sitenizi büyümeye hazır hale getiriyoruz.",
+        "desc": "Google, Meta ve Yapay Zeka ile uyumlu e-ticaret altyapısı kuruyoruz.",
         "bullets": [
           "Google Merchant Center",
-          "Meta Business & Instagram Shop",
-          "Google Analytics 4 Kurulumu",
-          "Google Tag Manager Entegrasyonu",
-          "Ürün Feed Yönetimi"
+          "Meta Katalog Entegrasyonu",
+          "GA4 & GTM Kurulumu",
+          "AI Uyumlu Veri Yapısı",
+          "Aylık Bakım"
         ]
       },
       "ads": {
         "title": "Reklam Stratejisi ve Yönetimi",
-        "desc": "Soğuk, ılık ve sıcak kitle segmentasyonuyla Meta Ads, Google Ads ve TikTok kampanyalarınızı strateji bazlı yönetiyoruz.",
+        "desc": "Veri odaklı reklam stratejisi ile Meta ve Google Ads kampanyalarınızı yönetiyoruz.",
         "bullets": [
-          "Meta Ads (Facebook & Instagram)",
-          "Google Ads (Search & Display)",
-          "TikTok Reklamları",
-          "Soğuk & Sıcak Kitle Stratejisi",
-          "Haftalık Optimizasyon"
+          "Kitle Segmentasyonu",
+          "Dönüşüm Hunisi",
+          "Bütçe Optimizasyonu",
+          "Haftalık Raporlama",
+          "A/B Testleri"
         ]
       },
       "social": {
         "title": "Sosyal Medya İçerik Üretimi",
-        "desc": "Fotoğraf ve video prodüksiyonu, profesyonel edit ve copywriting ile markanızın sosyal medyada parlak bir varlık göstermesini sağlıyoruz.",
+        "desc": "Fotoğraf ve video çekimleri, profesyonel kurgu ile sosyal medya varlığınızı güçlendiriyoruz.",
         "bullets": [
-          "Fotoğraf Çekimi & Prodüksiyon",
+          "Profesyonel Fotoğraf İçerik",
           "Video Çekimi & Kurgu",
-          "Profesyonel Copywriting",
-          "Reels & Short Video İçerikleri",
-          "Hikaye (Story) İçerikleri"
+          "Platforma Özel Format",
+          "Marka Kimliğine Uygun Tasarım",
+          "Aylık Raporlama"
         ]
       },
       "video": {
-        "title": "Sinematik Video Editleri",
-        "desc": "Tanıtım filmleri, dron çekimleri ve kurumsal videolarla markanızın hikayesini sinematik bir dille anlatıyoruz.",
+        "title": "Sinematik Reklam Filmi",
+        "desc": "Profesyonel video çekimi ve post-prodüksiyon ile markanızı sinematik bir dille anlatıyoruz.",
         "bullets": [
-          "Tanıtım Filmi Çekimi",
-          "Dron Çekimleri",
-          "Kurumsal Video Prodüksiyonu",
-          "Sinematik Kurgu & Renk Düzeltme",
-          "Reels & Shorts Formatı"
+          "4K Profesyonel Çekim",
+          "Dron Görüntüleri",
+          "Sinematik Renk Düzeltme",
+          "Platforma Özel Kesimler",
+          "Motion Graphics"
         ]
       }
     },
@@ -139,7 +139,28 @@
   },
   "common": {
     "close": "Kapat",
-    "seeDetails": "Detayları Gör"
+    "seeDetails": "Detayları Gör",
+    "back": "Geri"
+  },
+  "serviceDetail": {
+    "serviceNotFound": "Hizmet Bulunamadı",
+    "backToServices": "Hizmetlere Dön",
+    "service": "Hizmet",
+    "startingFrom": "Başlangıç",
+    "aboutThisService": "Bu Hizmet Hakkında",
+    "whatYouGet": "Neler Elde Edersiniz",
+    "howWeWork": "Nasıl Çalışıyoruz",
+    "packages": "Paketler",
+    "monthly": "Aylık",
+    "optional": "Opsiyonel",
+    "recommended": "Önerilen",
+    "whatsIncluded": "İçerik",
+    "getStarted": "Başlayın",
+    "frequentlyAskedQuestions": "Sıkça Sorulan Sorular",
+    "readyToStart": "Başlamaya Hazır mısınız?",
+    "contactForQuote": "İşletmenizin ihtiyaçlarına özel fiyat teklifi almak için bizimle iletişime geçin.",
+    "whatsapp": "WhatsApp",
+    "email": "E-posta"
   },
   "whatsapp": {
     "ariaLabel": "WhatsApp ile iletişim"

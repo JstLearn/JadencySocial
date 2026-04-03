@@ -139,7 +139,28 @@
   },
   "common": {
     "close": "Close",
-    "seeDetails": "See Details"
+    "seeDetails": "See Details",
+    "back": "Back"
+  },
+  "serviceDetail": {
+    "serviceNotFound": "Service Not Found",
+    "backToServices": "Back to Services",
+    "service": "Service",
+    "startingFrom": "Starting from",
+    "aboutThisService": "About This Service",
+    "whatYouGet": "What You Get",
+    "howWeWork": "How We Work",
+    "packages": "Packages",
+    "monthly": "Monthly",
+    "optional": "Optional",
+    "recommended": "Recommended",
+    "whatsIncluded": "What's Included",
+    "getStarted": "Get Started",
+    "frequentlyAskedQuestions": "Frequently Asked Questions",
+    "readyToStart": "Ready to Get Started?",
+    "contactForQuote": "Contact us for a personalized quote tailored to your business needs.",
+    "whatsapp": "WhatsApp",
+    "email": "Email"
   },
   "whatsapp": {
     "ariaLabel": "Contact via WhatsApp"
