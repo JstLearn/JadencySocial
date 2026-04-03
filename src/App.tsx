@@ -1,6 +1,7 @@
 import './i18n/index';
 import './styles/globals.css';
 
+import { Routes, Route } from 'react-router-dom';
 import Cursor from './components/Cursor/Cursor';
 import FloatingWhatsapp from './components/FloatingWhatsapp/FloatingWhatsapp';
 import ScrollProgress from './components/ScrollProgress/ScrollProgress';
@@ -11,6 +12,7 @@ import Stats from './components/Stats/Stats';
 import Process from './components/Process/Process';
 import CTA from './components/CTA/CTA';
 import Footer from './components/Footer/Footer';
+import ServiceDetail from './pages/services/ServiceDetail';
 
 export default function App() {
   return (
@@ -18,15 +20,30 @@ export default function App() {
       <ScrollProgress />
       <Cursor />
       <FloatingWhatsapp />
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <Stats />
-        <Process />
-        <CTA />
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Navbar />
+            <main>
+              <Hero />
+              <Services />
+              <Stats />
+              <Process />
+              <CTA />
+            </main>
+            <Footer />
+          </>
+        } />
+        <Route path="/hizmetler/:serviceKey" element={
+          <>
+            <Navbar />
+            <main>
+              <ServiceDetail />
+            </main>
+            <Footer />
+          </>
+        } />
+      </Routes>
     </div>
   );
 }

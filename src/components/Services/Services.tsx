@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ServiceModal from '../ServiceModal/ServiceModal';
 import './Services.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -47,18 +47,12 @@ const serviceColors = [
 
 export default function Services() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const sectionRef = useRef<HTMLElement>(null);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState<string | null>(null);
   const [activeStep, setActiveStep] = useState(-1);
 
   const handleCardClick = (key: string) => {
-    setSelectedService(key);
-    setModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setModalOpen(false);
+    navigate(`/hizmetler/${key}`);
   };
 
   useEffect(() => {
@@ -173,9 +167,6 @@ export default function Services() {
       return () => window.removeEventListener('resize', syncPathHeight);
     }, []);
 
-  const selectedIndex = selectedService ? serviceKeys.indexOf(selectedService as typeof serviceKeys[number]) : 0;
-  const selectedColor = serviceColors[selectedIndex] || serviceColors[0];
-
   const currentStepIndex = Math.max(0, Math.min(serviceColors.length - 1, Math.floor(activeStep)));
   const currentPathColor = activeStep >= 0 ? serviceColors[currentStepIndex] : serviceColors[0];
 
@@ -274,15 +265,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      {selectedService && (
-        <ServiceModal
-          isOpen={modalOpen}
-          onClose={handleCloseModal}
-          serviceKey={selectedService}
-          color={selectedColor}
-        />
-      )}
     </>
   );
 }
