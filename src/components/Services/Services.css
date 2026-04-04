@@ -319,8 +319,20 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .journey-path {
-    display: none;
+  /* Thicker, more visible glow on mobile — visible in gaps between cards */
+  .journey-path-glow {
+    stroke-width: 18;
+    filter: blur(14px);
+    opacity: 0.8;
+  }
+
+  .journey-path-inner {
+    stroke-width: 4;
+  }
+
+  .journey-path-bg {
+    stroke: rgba(255, 255, 255, 0.12);
+    stroke-width: 2;
   }
 
   .journey-step.left,
@@ -378,7 +390,7 @@
   }
 
   .journey-step {
-    margin: 80px 0;
+    margin: 150px 0;
     align-items: center;
   }
 
@@ -387,8 +399,8 @@
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
-    text-align: center;
-    justify-content: center;
+    text-align: left;
+    align-items: stretch;
   }
 
   .step-card {
@@ -419,7 +431,7 @@
   }
 
   .step-bullets {
-    display: none;
+    display: block;
   }
 
   .step-node {
@@ -436,41 +448,52 @@
     font-size: 0.8rem;
   }
 
-  /* Mobile: subtle hover tilt only */
-  .journey-step:hover .step-card {
-    transform: scale(1.01);
-    border-color: var(--step-color, #FFFFFF);
+  /* Restore active card effects on mobile */
+  .journey-step.active .step-card {
+    transform: scale(1.03);
+    border-color: color-mix(in srgb, var(--step-color, #FFFFFF) 50%, transparent);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4),
+                0 0 30px color-mix(in srgb, var(--step-color, #FFFFFF) 25%, transparent);
   }
 
-  .journey-step.active:hover .step-card {
-    transform: scale(1.02);
-  }
-
+  /* Restore full centered card glow on mobile */
   .journey-step.centered .step-card {
-    transform: none;
-    border-color: var(--color-border);
-    box-shadow: none;
+    transform: scale(1.05);
+    border-color: var(--step-color, #FFFFFF);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5),
+                0 0 0 1px var(--step-color, #FFFFFF),
+                0 0 50px color-mix(in srgb, var(--step-color, #FFFFFF) 40%, transparent);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.4s ease,
+                box-shadow 0.5s ease;
   }
 
   .journey-step.centered.left .step-card,
   .journey-step.centered.right .step-card {
-    transform: none;
+    transform: scale(1.05);
   }
 
-  .journey-step.centered:hover .step-card {
-    transform: scale(1.01);
+  .journey-step:hover .step-card {
+    transform: scale(1.02);
     border-color: var(--step-color, #FFFFFF);
   }
 
+  .journey-step.active:hover .step-card {
+    transform: scale(1.04);
+  }
+
+  .journey-step.centered:hover .step-card,
   .journey-step.centered.left:hover .step-card,
   .journey-step.centered.right:hover .step-card {
-    transform: scale(1.01);
-    border-color: var(--step-color, #FFFFFF);
+    transform: scale(1.07);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6),
+                0 0 0 1px var(--step-color, #FFFFFF),
+                0 0 60px color-mix(in srgb, var(--step-color, #FFFFFF) 50%, transparent);
   }
 
-  /* Show highlight only when actively clicked/tapped */
+  /* Touch tap feedback */
   .journey-step:active .step-card {
-    transform: scale(1.02);
+    transform: scale(1.03);
     border-color: var(--step-color, var(--color-primary));
   }
 }

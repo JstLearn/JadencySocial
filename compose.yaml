@@ -17,6 +17,9 @@ services:
       - "8080:80"
     profiles:
       - production
+    networks:
+      - jadency-network
+      - monitoring
 
   cloudflared:
     image: cloudflare/cloudflared:latest
@@ -31,6 +34,9 @@ services:
       - nginx
     profiles:
       - production
+    networks:
+      - jadency-network
+      - monitoring
 
   # =============================================
   # E-Posta Servisi (Nodemailer ile gönderim)
@@ -48,6 +54,8 @@ services:
   #     - mail
 
 networks:
-  default:
+  jadency-network:
     name: jadency-network
     driver: bridge
+  monitoring:
+    external: true

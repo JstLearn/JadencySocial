@@ -23,7 +23,7 @@ export default function ClientTicker() {
     <section className="client-ticker">
       <p className="client-ticker-label">{t('clientTicker.label')}</p>
       <div className="client-ticker-track">
-        {allClients.map((client, i) => (
+        {allClients.map((_, i) => (
           <span key={i} className="client-ticker-item">
             {t(`clientTicker.clients.${i % 10}`)}
           </span>
