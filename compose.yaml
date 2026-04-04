@@ -1,0 +1,53 @@
+# JadencySocial - Production Deploy
+# Cloudflare Tunnel ile otomatik DNS yönlendirme
+#
+# Kullanım:
+#   npm run build          # Önce build et
+#   docker compose --profile production up -d  # Production başlat
+
+services:
+  # Production: nginx static server + cloudflare tunnel
+  nginx:
+    image: nginx:alpine
+    container_name: jadency-nginx
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports:
+      - "8080:80"
+    profiles:
+      - production
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: jadency-cloudflared
+    command: ["tunnel", "--config", "/etc/cloudflared/config.yml", "run", "--token", "${CLOUDFLARE_TUNNEL_TOKEN}"]
+    environment:
+      - NO_AUTOUPDATE=true
+    volumes:
+      - ./cloudflared/config.yml:/etc/cloudflared/config.yml:ro
+    restart: unless-stopped
+    depends_on:
+      - nginx
+    profiles:
+      - production
+
+  # =============================================
+  # E-Posta Servisi (Nodemailer ile gönderim)
+  # Opsiyonel - Web sitesinden mail göndermek için
+  # =============================================
+  # mailer:
+  #   image: nodemailer/nodemailer:latest
+  #   container_name: jadency-mailer
+  #   environment:
+  #     - SMTP_HOST=${SMTP_HOST}
+  #     - SMTP_PORT=${SMTP_PORT}
+  #     - SMTP_USER=${SMTP_USER}
+  #     - SMTP_PASS=${SMTP_PASS}
+  #   profiles:
+  #     - mail
+
+networks:
+  default:
+    name: jadency-network
+    driver: bridge

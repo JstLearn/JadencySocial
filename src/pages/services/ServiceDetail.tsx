@@ -177,7 +177,7 @@ export default function ServiceDetail() {
             <div className="sd-section-content">
               <h2 className="sd-section-title">{t('serviceDetail.whatYouGet')}</h2>
               <div className="sd-benefits-grid">
-                {service.benefits.map((benefit, idx) => (
+                {(isEn ? (service.benefitsEn || service.benefits) : service.benefits).map((benefit, idx) => (
                   <div
                     key={idx}
                     className="sd-benefit-card"
@@ -219,8 +219,8 @@ export default function ServiceDetail() {
                       {idx < service.process!.length - 1 && <div className="sd-timeline-line" />}
                     </div>
                     <div className="sd-timeline-body">
-                      <h3>{step.title}</h3>
-                      <p>{step.description}</p>
+                      <h3>{isEn ? step.titleEn : step.title}</h3>
+                      <p>{isEn ? step.descriptionEn : step.description}</p>
                     </div>
                   </div>
                 ))}
@@ -260,14 +260,14 @@ export default function ServiceDetail() {
 
                   <div className="sd-pkg-price-row">
                     <span className="sd-pkg-price">{pkg.price}</span>
-                    {pkg.priceNote && <span className="sd-pkg-price-note">{pkg.priceNote}</span>}
+                    {pkg.priceNote && <span className="sd-pkg-price-note">{isEn ? (pkg.priceNoteEn || pkg.priceNote) : pkg.priceNote}</span>}
                   </div>
-                  <span className="sd-pkg-duration">{pkg.duration}</span>
+                  <span className="sd-pkg-duration">{isEn ? pkg.durationEn : pkg.duration}</span>
 
                   <div className="sd-pkg-deliverables">
                     <h4>{t('serviceDetail.whatsIncluded')}</h4>
                     <ul>
-                      {pkg.deliverables.map((item, i) => (
+                      {(isEn ? (pkg.deliverablesEn || pkg.deliverables) : pkg.deliverables).map((item, i) => (
                         <li key={i}>
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                             <polyline points="20 6 9 17 4 12"/>
@@ -317,13 +317,13 @@ export default function ServiceDetail() {
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   >
                     <div className="sd-faq-question">
-                      <span>{item.question}</span>
+                      <span>{isEn ? (item.questionEn || item.question) : item.question}</span>
                       <svg className="sd-faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                         <polyline points="6 9 12 15 18 9"/>
                       </svg>
                     </div>
                     <div className="sd-faq-answer">
-                      <p>{item.answer}</p>
+                      <p>{isEn ? (item.answerEn || item.answer) : item.answer}</p>
                     </div>
                   </div>
                 ))}

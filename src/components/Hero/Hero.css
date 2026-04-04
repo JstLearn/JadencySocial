@@ -32,14 +32,13 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 80% 70% at 35% 50%,
+    ellipse 90% 80% at 30% 50%,
     transparent 0%,
-    transparent 25%,
-    rgba(0, 0, 0, 0.12) 38%,
-    rgba(0, 0, 0, 0.28) 50%,
-    rgba(0, 0, 0, 0.50) 63%,
-    rgba(0, 0, 0, 0.72) 76%,
-    rgba(0, 0, 0, 0.88) 88%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.08) 45%,
+    rgba(0, 0, 0, 0.20) 60%,
+    rgba(0, 0, 0, 0.40) 75%,
+    rgba(0, 0, 0, 0.65) 88%,
     #000000 100%
   );
   z-index: 1;
@@ -137,19 +136,5 @@
 @media (max-width: 768px) {
   .hero-inner {
     padding: 60px 0 0;
-    text-align: center;
-  }
-
-  .hero-label {
-    justify-content: center;
-  }
-
-  .hero-actions {
-    justify-content: center;
-  }
-
-  .hero-desc {
-    margin-left: auto;
-    margin-right: auto;
   }
 }

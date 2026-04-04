@@ -99,16 +99,21 @@ const lineFragmentShader = `
   }
 `;
 
-function generateParticlePositions(count: number): Float32Array {
+function generateParticlePositions(
+  count: number,
+  maxRadius: number = 4.0,
+  yScale: number = 0.7,
+  zScale: number = 0.5
+): Float32Array {
   const positions = new Float32Array(count * 3);
   for (let i = 0; i < count; i++) {
     // Distribute in a 3D sphere with bias towards center
-    const r = Math.pow(Math.random(), 0.5) * 4.5;
+    const r = Math.pow(Math.random(), 0.5) * maxRadius;
     const theta = Math.random() * Math.PI * 2;
     const phi = Math.acos(2 * Math.random() - 1);
     positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-    positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta) * 0.7;
-    positions[i * 3 + 2] = r * Math.cos(phi) * 0.5;
+    positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta) * yScale;
+    positions[i * 3 + 2] = r * Math.cos(phi) * zScale;
   }
   return positions;
 }
@@ -172,8 +177,8 @@ function NetworkLines({ positions, count }: NetworkLinesProps) {
   useFrame((_, delta) => {
     timeRef.current += delta;
     if (linesRef.current) {
-      linesRef.current.rotation.y = timeRef.current * 0.02;
-      linesRef.current.rotation.x = Math.sin(timeRef.current * 0.01) * 0.05;
+      linesRef.current.rotation.y = timeRef.current * 0.02 * 1.5;
+      linesRef.current.rotation.x = Math.sin(timeRef.current * 0.01 * 1.5) * 0.05;
     }
   });
 
@@ -200,8 +205,13 @@ export default function ParticleSystem() {
   const { size, camera } = useThree();
 
   // Generate all attributes once
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const particleRadius = isMobile ? 2.5 : 4.0;
+  const yScale = isMobile ? 1.0 : 0.7;
+  const zScale = isMobile ? 0.25 : 0.5;
+
   const { positions, sizes, colors, offsets, speeds } = useMemo(() => {
-    const pos = generateParticlePositions(PARTICLE_COUNT);
+    const pos = generateParticlePositions(PARTICLE_COUNT, particleRadius, yScale, zScale);
     const sz = new Float32Array(PARTICLE_COUNT);
     const col = new Float32Array(PARTICLE_COUNT * 3);
     const off = new Float32Array(PARTICLE_COUNT);
@@ -276,9 +286,12 @@ export default function ParticleSystem() {
     shaderMaterial.uniforms.uTime.value = timeRef.current;
     shaderMaterial.uniforms.uMouse.value.copy(mouseRef.current);
 
+    const speedMultiplier = isMobile ? 1.5 : 1.0;
+    const driftMultiplier = isMobile ? 0.5 : 1.0;
+
     if (pointsRef.current) {
-      pointsRef.current.rotation.y = timeRef.current * 0.025;
-      pointsRef.current.rotation.x = Math.sin(timeRef.current * 0.008) * 0.08;
+      pointsRef.current.rotation.y = timeRef.current * 0.025 * speedMultiplier;
+      pointsRef.current.rotation.x = Math.sin(timeRef.current * 0.008 * speedMultiplier) * 0.08 * driftMultiplier;
     }
   });
 
