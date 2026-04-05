@@ -28,3 +28,9 @@ dist-ssr
 *.sln
 *.sw?
 .gitnexus
+
+# Added by AI assistant to prevent accidental push of sensitive/binary files
+*.deb
+*.png
+cloudflared/credentials.json
+.claude/

@@ -1,0 +1,6 @@
+ingress:
+  - hostname: jadencysocial.com
+    service: http://jadency-nginx:80
+  - hostname: www.jadencysocial.com
+    service: http://jadency-nginx:80
+  - service: http_status:404

@@ -1,0 +1,17 @@
+# JadencySocial Autonomous System — Crontab
+# Bu dosyayı kurmak için: bash cron/setup-cron.sh
+
+# Scout: Her gece 02:00
+0 2 * * * /home/deniz/Cloud/Code/JadencySocial/autonomous/cron/nightly-scout.sh >> /home/deniz/Cloud/Code/JadencySocial/autonomous/logs/cron.log 2>&1
+
+# Analyst: Her sabah 06:00
+0 6 * * * cd /home/deniz/Cloud/Code/JadencySocial/autonomous && /home/deniz/.local/share/fnm/node-versions/v22.15.0/installation/bin/node /home/deniz/Cloud/Code/JadencySocial/autonomous/node_modules/.bin/tsx src/analyst.ts >> /home/deniz/Cloud/Code/JadencySocial/autonomous/logs/analyst.log 2>&1
+
+# Daily calls: Her gün 09:00
+0 9 * * * /home/deniz/Cloud/Code/JadencySocial/autonomous/cron/daily-calls.sh >> /home/deniz/Cloud/Code/JadencySocial/autonomous/logs/cron.log 2>&1
+
+# Daily summary: Her gün 20:00
+0 20 * * * cd /home/deniz/Cloud/Code/JadencySocial/autonomous && /home/deniz/.local/share/fnm/node-versions/v22.15.0/installation/bin/node /home/deniz/Cloud/Code/JadencySocial/autonomous/node_modules/.bin/tsx src/reporter.ts daily >> /home/deniz/Cloud/Code/JadencySocial/autonomous/logs/cron.log 2>&1
+
+# Weekly report: Her Pazartesi 08:00
+0 8 * * 1 /home/deniz/Cloud/Code/JadencySocial/autonomous/cron/weekly-report.sh >> /home/deniz/Cloud/Code/JadencySocial/autonomous/logs/cron.log 2>&1

@@ -1,0 +1,242 @@
+{
+  "regions": [
+    {
+      "id": "tekirdag-merkez",
+      "name": "Tekirdağ Merkez",
+      "city": "Tekirdağ",
+      "district": "Merkez",
+      "coordinates": {
+        "lat": 40.9833,
+        "lng": 27.5167
+      },
+      "radius_km": 10,
+      "priority": 1,
+      "categories": [
+        "restaurant",
+        "cafe",
+        "hotel",
+        "shop",
+        "salon",
+        "gym"
+      ],
+      "active": true
+    },
+    {
+      "id": "cerkezkoy",
+      "name": "Çerkezköy",
+      "city": "Tekirdağ",
+      "district": "Çerkezköy",
+      "coordinates": {
+        "lat": 41.2667,
+        "lng": 28.0167
+      },
+      "radius_km": 8,
+      "priority": 2,
+      "categories": [
+        "restaurant",
+        "cafe",
+        "shop",
+        "auto_service",
+        "construction"
+      ],
+      "active": true
+    },
+    {
+      "id": "kapakli",
+      "name": "Kapaklı",
+      "city": "Tekirdağ",
+      "district": "Kapaklı",
+      "coordinates": {
+        "lat": 41.3167,
+        "lng": 28.4000
+      },
+      "radius_km": 6,
+      "priority": 2,
+      "categories": [
+        "restaurant",
+        "cafe",
+        "shop",
+        "salon",
+        "beauty"
+      ],
+      "active": true
+    },
+    {
+      "id": "corlu",
+      "name": "Çorlu",
+      "city": "Tekirdağ",
+      "district": "Çorlu",
+      "coordinates": {
+        "lat": 41.1667,
+        "lng": 27.8000
+      },
+      "radius_km": 12,
+      "priority": 3,
+      "categories": [
+        "restaurant",
+        "hotel",
+        "shop",
+        "gym",
+        "healthcare",
+        "education"
+      ],
+      "active": true
+    },
+    {
+      "id": "saray",
+      "name": "Saray",
+      "city": "Tekirdağ",
+      "district": "Saray",
+      "coordinates": {
+        "lat": 41.4500,
+        "lng": 28.1667
+      },
+      "radius_km": 5,
+      "priority": 4,
+      "categories": [
+        "restaurant",
+        "cafe",
+        "shop"
+      ],
+      "active": true
+    },
+    {
+      "id": "malkara",
+      "name": "Malkara",
+      "city": "Tekirdağ",
+      "district": "Malkara",
+      "coordinates": {
+        "lat": 40.8833,
+        "lng": 26.9000
+      },
+      "radius_km": 5,
+      "priority": 5,
+      "categories": [
+        "restaurant",
+        "cafe",
+        "shop"
+      ],
+      "active": false
+    },
+    {
+      "id": "sarkoy",
+      "name": "Şarköy",
+      "city": "Tekirdağ",
+      "district": "Şarköy",
+      "coordinates": {
+        "lat": 40.6167,
+        "lng": 27.0500
+      },
+      "radius_km": 5,
+      "priority": 5,
+      "categories": [
+        "restaurant",
+        "hotel",
+        "cafe"
+      ],
+      "active": false
+    }
+  ],
+  "businessCategories": {
+    "restaurant": {
+      "googlePlaceType": "restaurant",
+      "keywords": ["restaurant", "restoran", "yemek"],
+      "targetScore": 60,
+      "typicalBudget": {
+        "min": 15000,
+        "max": 40000
+      }
+    },
+    "cafe": {
+      "googlePlaceType": "cafe",
+      "keywords": ["cafe", "kafe", "kahve"],
+      "targetScore": 55,
+      "typicalBudget": {
+        "min": 10000,
+        "max": 25000
+      }
+    },
+    "hotel": {
+      "googlePlaceType": "lodging",
+      "keywords": ["hotel", "otell", "pansiyon"],
+      "targetScore": 75,
+      "typicalBudget": {
+        "min": 25000,
+        "max": 60000
+      }
+    },
+    "shop": {
+      "googlePlaceType": "store",
+      "keywords": ["shop", "mağaza", "dükkan"],
+      "targetScore": 50,
+      "typicalBudget": {
+        "min": 12000,
+        "max": 30000
+      }
+    },
+    "salon": {
+      "googlePlaceType": "beauty_salon",
+      "keywords": ["salon", "kuaför", "berber"],
+      "targetScore": 55,
+      "typicalBudget": {
+        "min": 10000,
+        "max": 20000
+      }
+    },
+    "gym": {
+      "googlePlaceType": "gym",
+      "keywords": ["gym", "spor", "fitness"],
+      "targetScore": 65,
+      "typicalBudget": {
+        "min": 15000,
+        "max": 35000
+      }
+    },
+    "healthcare": {
+      "googlePlaceType": "hospital",
+      "keywords": ["hospital", "klinik", "tıp"],
+      "targetScore": 70,
+      "typicalBudget": {
+        "min": 20000,
+        "max": 50000
+      }
+    },
+    "auto_service": {
+      "googlePlaceType": "car_repair",
+      "keywords": ["car repair", "oto servis", "garaj"],
+      "targetScore": 45,
+      "typicalBudget": {
+        "min": 10000,
+        "max": 25000
+      }
+    },
+    "construction": {
+      "googlePlaceType": "general_contractor",
+      "keywords": ["construction", "inşaat", "müteahhit"],
+      "targetScore": 60,
+      "typicalBudget": {
+        "min": 20000,
+        "max": 50000
+      }
+    },
+    "education": {
+      "googlePlaceType": "school",
+      "keywords": ["school", "okul", "eğitim"],
+      "targetScore": 65,
+      "typicalBudget": {
+        "min": 15000,
+        "max": 40000
+      }
+    }
+  },
+  "scoutSettings": {
+    "minRating": 3.0,
+    "maxRating": 4.8,
+    "minReviews": 5,
+    "maxReviews": 500,
+    "excludeChains": true,
+    "excludeFranchises": true,
+    "searchDelay": 1000,
+    "maxResultsPerCategory": 50
+  }
+}

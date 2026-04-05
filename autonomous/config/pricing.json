@@ -1,0 +1,211 @@
+{
+  "currency": "TRY",
+  "currencySymbol": "₺",
+  "packages": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "nameTr": "Başlangıç",
+      "description": "Sosyal medya yolculuğunuza yeni başlıyorsanız, size temel düzeyde profesyonel destek sunuyoruz.",
+      "monthlyPrice": 15000,
+      "annualPrice": 162000,
+      "features": [
+        "Sosyal medya stratejisi oluşturma",
+        "Aylık 20 gönderi",
+        "Instagram ve Facebook yönetimi",
+        "Temel içerik oluşturma",
+        "Aylık raporlama"
+      ],
+      "includedServices": [
+        "strategy",
+        "content_creation",
+        "posting",
+        "reporting_basic"
+      ],
+      "platforms": ["instagram", "facebook"],
+      "postsPerMonth": 20,
+      "adBudget": 0,
+      "revisions": 2,
+      "reportingFrequency": "monthly",
+      "targetBusinessTypes": ["cafe", "salon", "shop"],
+      "color": "#64748b"
+    },
+    {
+      "id": "growth",
+      "name": "Growth",
+      "nameTr": "Büyüme",
+      "description": "Sosyal medya varlığınızı güçlendirmek ve büyümek istiyorsanız, kapsamlı bir paket sunuyoruz.",
+      "monthlyPrice": 25000,
+      "annualPrice": 270000,
+      "features": [
+        "Kapsamlı sosyal medya stratejisi",
+        "Aylık 30 gönderi + 10 hikaye",
+        "Instagram, Facebook ve Google yönetimi",
+        "İçerik oluşturma ve düzenleme",
+        "Topluluk yönetimi",
+        "5.000 ₺ reklam bütçesi dahil",
+        "2 haftalık raporlama",
+        "2 revizyon hakkı"
+      ],
+      "includedServices": [
+        "strategy",
+        "content_creation",
+        "posting",
+        "story_posts",
+        "community_management",
+        "basic_ads",
+        "reporting_biweekly"
+      ],
+      "platforms": ["instagram", "facebook", "google"],
+      "postsPerMonth": 30,
+      "storiesPerMonth": 10,
+      "adBudget": 5000,
+      "revisions": 4,
+      "reportingFrequency": "biweekly",
+      "targetBusinessTypes": ["restaurant", "shop", "gym", "salon"],
+      "color": "#2563eb"
+    },
+    {
+      "id": "premium",
+      "name": "Premium",
+      "nameTr": "Premium",
+      "description": "Dijital varlığınızda fark yaratmak ve sektörünüzde lider olmak istiyorsanız, tam kapsamlı bir hizmet sunuyoruz.",
+      "monthlyPrice": 40000,
+      "annualPrice": 432000,
+      "features": [
+        "Premium sosyal medya stratejisi",
+        "Aylık 50 gönderi + 20 hikaye",
+        "Tüm platformlarda yönetim",
+        "Profesyonel içerik üretimi",
+        "Aktif topluluk yönetimi",
+        "10.000 ₺ reklam bütçesi dahil",
+        "Influencer marketing desteği",
+        "Haftalık raporlama",
+        "8 revizyon hakkı",
+        "Öncelikli destek"
+      ],
+      "includedServices": [
+        "strategy_premium",
+        "content_creation_premium",
+        "posting",
+        "story_posts",
+        "reel_creation",
+        "community_management",
+        "advanced_ads",
+        "influencer_marketing",
+        "reporting_weekly"
+      ],
+      "platforms": ["instagram", "facebook", "google", "tiktok", "youtube"],
+      "postsPerMonth": 50,
+      "storiesPerMonth": 20,
+      "reelsPerMonth": 4,
+      "adBudget": 10000,
+      "revisions": 8,
+      "reportingFrequency": "weekly",
+      "targetBusinessTypes": ["hotel", "restaurant", "healthcare", "construction"],
+      "color": "#f59e0b"
+    }
+  ],
+  "additionalServices": {
+    "extra_post": {
+      "name": "Ek Gönderi",
+      "price": 500,
+      "unit": "per post",
+      "description": "Paketinize ek gönderi"
+    },
+    "extra_reel": {
+      "name": "Ek Reels",
+      "price": 1000,
+      "unit": "per reel",
+      "description": "Profesyonel Reels videosu"
+    },
+    "extra_story": {
+      "name": "Ek Hikaye Paketi",
+      "price": 300,
+      "unit": "10 stories",
+      "description": "10 adet hikaye içeriği"
+    },
+    "logo_design": {
+      "name": "Logo Tasarımı",
+      "price": 5000,
+      "unit": "one-time",
+      "description": "Profesyonel logo tasarımı"
+    },
+    "website_banner": {
+      "name": "Web Sitesi Banner",
+      "price": 2000,
+      "unit": "per banner",
+      "description": "Web siteniz için banner"
+    },
+    "photo_session": {
+      "name": "Fotoğraf Çekimi",
+      "price": 3000,
+      "unit": "per session",
+      "description": "Profesyonel fotoğraf çekimi (4 saat)"
+    },
+    "video_production": {
+      "name": "Video Prodüksiyonu",
+      "price": 5000,
+      "unit": "per video",
+      "description": "Tanıtım videosu (60 saniye)"
+    },
+    "additional_ad_budget": {
+      "name": "Ek Reklam Bütçesi",
+      "price": 1000,
+      "unit": "per 1000 TRY",
+      "description": "Ek reklam harcaması"
+    }
+  },
+  "discounts": {
+    "annual_payment": {
+      "name": "Yıllık Ödeme İndirimi",
+      "percentage": 10,
+      "description": "Yıllık ödemede %10 indirim"
+    },
+    "semiannual_payment": {
+      "name": "6 Aylık Ödeme İndirimi",
+      "percentage": 5,
+      "description": "6 aylık ödemede %5 indirim"
+    },
+    "multiple_location": {
+      "name": "Çoklu Şube İndirimi",
+      "percentage": 15,
+      "conditions": {
+        "minLocations": 2,
+        "maxDiscount": 25
+      },
+      "description": "2+ şube için %15, 3+ şube için %25 indirim"
+    },
+    "referral": {
+      "name": "Referans İndirimi",
+      "percentage": 20,
+      "description": "Referans müşteri için %20 indirim (her iki tarafa)"
+    }
+  },
+  "paymentTerms": {
+    "default": {
+      "method": "bank_transfer",
+      "dueDays": 7,
+      "description": "Fatura tarihinden itibaren 7 gün içinde"
+    },
+    "monthly": {
+      "name": "Aylık",
+      "description": "Her ayın ilk 7 günü içinde"
+    },
+    "quarterly": {
+      "name": "3 Aylık",
+      "description": "3 aylık dönem başında"
+    },
+    "annual": {
+      "name": "Yıllık",
+      "description": "Sözleşme başlangıcında tam yıl"
+    }
+  },
+  "contractTerms": {
+    "minLength": 6,
+    "defaultLength": 12,
+    "maxLength": 24,
+    "cancellationNotice": 30,
+    "description": "Minimum sözleşme süresi 6 ay, varsayılan 12 aydır."
+  }
+}
